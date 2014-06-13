@@ -4,6 +4,7 @@ namespace spec\BigName\Workflow\Containers;
 
 use BigName\Workflow\Stubs\StubObject;
 use Illuminate\Container\Container;
+use InvalidArgumentException;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -29,5 +30,10 @@ class LaravelContainerSpec extends ObjectBehavior
     function it_makes_an_object()
     {
         $this->make('BigName\Workflow\Stubs\StubObject')->shouldReturnAnInstanceOf('BigName\Workflow\Stubs\StubObject');
+    }
+
+    function it_only_accepts_a_string_when_making_an_object()
+    {
+        $this->shouldThrow(new InvalidArgumentException)->duringMake(123);
     }
 }

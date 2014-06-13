@@ -1,6 +1,7 @@
 <?php namespace BigName\Workflow\Containers;
 
 use Illuminate\Container\Container as IlluminateContainer;
+use InvalidArgumentException;
 
 class LaravelContainer implements Container
 {
@@ -13,6 +14,9 @@ class LaravelContainer implements Container
 
     public function make($class)
     {
+        if ( ! is_string($class)) {
+            throw new InvalidArgumentException;
+        }
         return $this->container->make($class);
     }
 }
