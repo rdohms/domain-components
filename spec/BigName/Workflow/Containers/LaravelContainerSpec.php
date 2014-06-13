@@ -35,5 +35,8 @@ class LaravelContainerSpec extends ObjectBehavior
     function it_only_accepts_a_string_when_making_an_object()
     {
         $this->shouldThrow(new InvalidArgumentException)->duringMake(123);
+        $this->shouldThrow(new InvalidArgumentException)->duringMake([]);
+        $this->shouldThrow(new InvalidArgumentException)->duringMake(12.3);
+        $this->shouldThrow(new InvalidArgumentException)->duringMake(new \stdClass);
     }
 }
