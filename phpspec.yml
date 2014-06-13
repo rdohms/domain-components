@@ -1,0 +1,7 @@
+---
+suites:
+  event_dispatcher_suite:
+    namespace: BigName\Workflow
+    psr4_prefix: BigName\Workflow
+
+formatter.name: pretty

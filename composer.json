@@ -1,0 +1,29 @@
+{
+    "name": "heybigname/workflow",
+    "version": "0.1.0",
+    "tags": ["command bus", "domain events"],
+    "description": "Our workflow based on using a Command Bus and Domain Events.",
+    "authors": [
+        {
+            "name": "Mitchell van Wijngaarden",
+            "email": "mitchell@kooding.nl",
+            "homepage": "http://heybigname.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "2.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "BigName\\Workflow\\": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev"
+}

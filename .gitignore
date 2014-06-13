@@ -1,0 +1,8 @@
+/vendor
+/ansible
+Vagrantfile
+composer.phar
+composer.lock
+.DS_Store
+.idea
+.vagrant
