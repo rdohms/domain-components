@@ -13,4 +13,9 @@ trait EventRecorder
     {
         return $this->recordedEvents;
     }
+
+    public function clearRecordedEvents()
+    {
+        $this->recordedEvents = [];
+    }
 } 

@@ -18,4 +18,12 @@ class EventRecorderSpec extends ObjectBehavior
         $this->raise($event);
         $this->getRecordedEvents()->shouldHaveCount(1);
     }
+
+    function it_can_clear_events(DomainEvent $event)
+    {
+        $this->raise($event);
+        $this->getRecordedEvents()->shouldHaveCount(1);
+        $this->clearRecordedEvents();
+        $this->getRecordedEvents()->shouldHaveCount(0);
+    }
 }
