@@ -17,6 +17,7 @@ class EventRecorderSpec extends ObjectBehavior
     {
         $this->raise($event);
         $this->getRecordedEvents()->shouldHaveCount(1);
+//        $this->getRecordedEvents()->shouldBeAnInstanceOf('BigName\Workflow\DomainEvents');
     }
 
     function it_can_clear_events(DomainEvent $event)
