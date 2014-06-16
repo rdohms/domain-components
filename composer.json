@@ -13,7 +13,8 @@
     "require": {
         "php": ">=5.4.0",
         "illuminate/container": "4.0.*",
-        "heybigname/event-dispatcher": "1.0.*"
+        "heybigname/event-dispatcher": "1.0.*",
+        "mitch/laravel-doctrine": "0.*"
     },
     "require-dev": {
         "phpspec/phpspec": "~2.0"
