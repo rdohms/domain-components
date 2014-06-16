@@ -48,4 +48,9 @@ class ImmutableArray implements Countable, ArrayAccess, IteratorAggregate
     {
         return implode($glue, $this->items);
     }
+
+    public function last()
+    {
+        return end($this->items);
+    }
 }

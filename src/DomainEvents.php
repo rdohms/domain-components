@@ -1,5 +1,5 @@
 <?php namespace BigName\Workflow;
 
-class DomainEvents
+class DomainEvents extends ImmutableArray
 {
 }

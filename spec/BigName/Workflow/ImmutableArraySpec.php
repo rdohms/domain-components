@@ -44,4 +44,9 @@ class ImmutableArraySpec extends ObjectBehavior
     {
         $this->join(',')->shouldBe('1,2,3');
     }
+
+    function it_can_get_the_last_item()
+    {
+        $this->last()->shouldBe(3);
+    }
 }

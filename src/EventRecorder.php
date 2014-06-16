@@ -11,7 +11,7 @@ trait EventRecorder
 
     public function getRecordedEvents()
     {
-        return $this->recordedEvents;
+        return new DomainEvents($this->recordedEvents);
     }
 
     public function clearRecordedEvents()
