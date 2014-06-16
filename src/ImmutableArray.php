@@ -1,9 +1,11 @@
 <?php namespace BigName\Workflow;
 
 use ArrayAccess;
+use ArrayIterator;
 use Countable;
+use IteratorAggregate;
 
-class ImmutableArray implements Countable, ArrayAccess
+class ImmutableArray implements Countable, ArrayAccess, IteratorAggregate
 {
     private $items = [];
 
@@ -17,23 +19,33 @@ class ImmutableArray implements Countable, ArrayAccess
         return count($this->items);
     }
 
-    public function offsetExists($key)
+    final public function offsetExists($key)
     {
         return array_key_exists($key, $this->items);
     }
 
-    public function offsetGet($key)
+    final public function offsetGet($key)
     {
         return $this->items[$key];
     }
 
-    public function offsetSet($key, $value)
+    final public function offsetSet($key, $value)
     {
         throw new ArrayIsImmutable;
     }
 
-    public function offsetUnset($key)
+    final public function offsetUnset($key)
     {
         throw new ArrayIsImmutable;
+    }
+
+    final public function getIterator()
+    {
+        return new ArrayIterator($this->items);
+    }
+
+    public function join($glue)
+    {
+        return implode($glue, $this->items);
     }
 }

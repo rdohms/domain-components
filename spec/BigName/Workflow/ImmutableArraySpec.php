@@ -20,7 +20,7 @@ class ImmutableArraySpec extends ObjectBehavior
 
     function it_can_count_the_items()
     {
-        $this->count()->shouldBeLike('3');
+        $this->count()->shouldBe(3);
     }
 
     function it_can_get_items()
@@ -38,5 +38,10 @@ class ImmutableArraySpec extends ObjectBehavior
     function it_will_throw_when_trying_to_unset_items()
     {
         $this->shouldThrow(new ArrayIsImmutable)->duringOffsetUnset('key');
+    }
+
+    function it_can_join_items_together()
+    {
+        $this->join(',')->shouldBe('1,2,3');
     }
 }
