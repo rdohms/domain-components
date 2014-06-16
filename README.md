@@ -4,6 +4,11 @@ This package provides several interfaces and tools for your project.
 
 ## Included in this package
 
+### Packages
+
+* [Event Dispatcher](https://github.com/heybigname/event-dispatcher)
+* [Laravel Doctrine](https://github.com/mitchellvanw/laravel-doctrine)
+
 ### Interfaces
 
 **CommandBus** `BigName\Workflow\CommandBus`
