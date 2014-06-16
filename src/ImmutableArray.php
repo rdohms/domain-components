@@ -5,14 +5,19 @@ use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 
-class ImmutableArray implements Countable, ArrayAccess, IteratorAggregate
+abstract class ImmutableArray implements Countable, ArrayAccess, IteratorAggregate
 {
     private $items = [];
 
     public function __construct(array $items)
     {
-        $this->items = $items;
+        foreach ($items as $item) {
+            $this->isItemOfValidType($item);
+            $this->items[] = $item;
+        }
     }
+
+    abstract protected function isItemOfValidType($item);
 
     final public function count()
     {
@@ -42,15 +47,5 @@ class ImmutableArray implements Countable, ArrayAccess, IteratorAggregate
     final public function getIterator()
     {
         return new ArrayIterator($this->items);
-    }
-
-    public function join($glue)
-    {
-        return implode($glue, $this->items);
-    }
-
-    public function last()
-    {
-        return end($this->items);
     }
 }

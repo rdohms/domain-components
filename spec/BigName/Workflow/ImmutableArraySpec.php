@@ -3,14 +3,16 @@
 namespace spec\BigName\Workflow;
 
 use BigName\Workflow\ArrayIsImmutable;
+use BigName\Workflow\DomainEvent;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 class ImmutableArraySpec extends ObjectBehavior
 {
-    function let()
+    function let(DomainEvent $event)
     {
-        $this->beConstructedWith([1,2,3]);
+        $this->beAnInstanceOf('BigName\Workflow\DomainEvents');
+        $this->beConstructedWith([$event, $event, $event]);
     }
 
     function it_is_initializable()
@@ -25,9 +27,9 @@ class ImmutableArraySpec extends ObjectBehavior
 
     function it_can_get_items()
     {
-        $this[0]->shouldBe(1);
-        $this[1]->shouldBe(2);
-        $this[2]->shouldBe(3);
+        $this->offsetGet(0)->shouldBeAnInstanceOf('BigName\Workflow\DomainEvent');
+        $this->offsetGet(1)->shouldBeAnInstanceOf('BigName\Workflow\DomainEvent');
+        $this->offsetGet(2)->shouldBeAnInstanceOf('BigName\Workflow\DomainEvent');
     }
 
     function it_will_throw_when_trying_to_set_items()
@@ -38,15 +40,5 @@ class ImmutableArraySpec extends ObjectBehavior
     function it_will_throw_when_trying_to_unset_items()
     {
         $this->shouldThrow(new ArrayIsImmutable)->duringOffsetUnset('key');
-    }
-
-    function it_can_join_items_together()
-    {
-        $this->join(',')->shouldBe('1,2,3');
-    }
-
-    function it_can_get_the_last_item()
-    {
-        $this->last()->shouldBe(3);
     }
 }
