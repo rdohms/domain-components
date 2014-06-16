@@ -12,9 +12,11 @@ public function execute(Request $request);
 ```
 
 **Request** `BigName\Workflow\Request`
+
 No methods to implement.
 
 **Response** `BigName\Workflow\Response`
+
 No methods to implement.
 
 **Handler** `BigName\Workflow\Handler`
@@ -40,6 +42,7 @@ public function clearRecordedEvents();
 ### Classes
 
 **DomainEvents** `BigName\Workflow\DomainEvents`
+
 This class is an extension of ImmutableArray and only accepts instances of a `BigName\Workflow\DomainEvents`.
 
 ### Abstract Classes
