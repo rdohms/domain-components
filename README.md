@@ -48,7 +48,7 @@ public function clearRecordedEvents();
 
 **DomainEvents** `BigName\Workflow\DomainEvents`
 
-This class is an extension of ImmutableArray and only accepts instances of a `BigName\Workflow\DomainEvents`.
+This class is an extension of ImmutableArray and only accepts instances of `BigName\Workflow\DomainEvent`.
 
 ### Abstract Classes
 
