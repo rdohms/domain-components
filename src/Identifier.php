@@ -3,4 +3,5 @@
 interface Identifier
 {
     public function getId();
+    public function equal(Identifier $other);
 } 
