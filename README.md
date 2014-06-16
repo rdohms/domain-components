@@ -11,7 +11,7 @@ This package provides several interfaces and tools for your project.
 
 ### Interfaces
 
-[CommandBus](https://github.com/heybigname/workflow/blob/master/src/CommandBus.php)
+[**CommandBus**](https://github.com/heybigname/workflow/blob/master/src/CommandBus.php)
 ```php
 public function execute(Request $request);
 ```
