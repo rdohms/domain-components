@@ -12,12 +12,12 @@ abstract class ImmutableArray implements Countable, ArrayAccess, IteratorAggrega
     public function __construct(array $items)
     {
         foreach ($items as $item) {
-            $this->isItemOfValidType($item);
+            $this->isItemOfCorrectType($item);
             $this->items[] = $item;
         }
     }
 
-    abstract protected function isItemOfValidType($item);
+    abstract protected function isItemOfCorrectType($item);
 
     final public function count()
     {

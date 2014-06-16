@@ -2,7 +2,7 @@
 
 class DomainEvents extends ImmutableArray
 {
-    protected function isItemOfValidType($item)
+    protected function isItemOfCorrectType($item)
     {
         return $item instanceof DomainEvent;
     }
