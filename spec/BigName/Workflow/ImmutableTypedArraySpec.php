@@ -10,11 +10,11 @@ use Prophecy\Argument;
 
 class ImmutableTypedArraySpec extends ObjectBehavior
 {
-    function let(DomainEvent $event)
-    {
-        $this->beAnInstanceOf('BigName\Workflow\DomainEventArray');
-        $this->beConstructedWith([$event, $event, $event]);
-    }
+        function let(DomainEvent $event)
+        {
+            $this->beAnInstanceOf('BigName\Workflow\DomainEventArray');
+            $this->beConstructedWith([$event, $event, $event]);
+        }
 
     function it_is_initializable()
     {
