@@ -2,17 +2,16 @@
 
 namespace spec\BigName\Workflow;
 
-use BigName\Workflow\ArrayIsImmutable;
-use BigName\Workflow\DomainEvent;
+use BigName\Workflow\CannotModifyImmutableArrayException;
+
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 class ImmutableArraySpec extends ObjectBehavior
 {
-    function let(DomainEvent $event)
+    function let()
     {
-        $this->beAnInstanceOf('BigName\Workflow\DomainEvents');
-        $this->beConstructedWith([$event, $event, $event]);
+        $this->beConstructedWith(['foo', 'bar', 'baz']);
     }
 
     function it_is_initializable()
@@ -27,18 +26,18 @@ class ImmutableArraySpec extends ObjectBehavior
 
     function it_can_get_items()
     {
-        $this->offsetGet(0)->shouldBeAnInstanceOf('BigName\Workflow\DomainEvent');
-        $this->offsetGet(1)->shouldBeAnInstanceOf('BigName\Workflow\DomainEvent');
-        $this->offsetGet(2)->shouldBeAnInstanceOf('BigName\Workflow\DomainEvent');
+        $this->offsetGet(0)->shouldBe('foo');
+        $this->offsetGet(1)->shouldBe('bar');
+        $this->offsetGet(2)->shouldBe('baz');
     }
 
-    function it_will_throw_when_trying_to_set_items()
+    function it_will_disallow_offset_assignment()
     {
-        $this->shouldThrow(new ArrayIsImmutable)->duringOffsetSet('key', 'value');
+        $this->shouldThrow(new CannotModifyImmutableArrayException())->duringOffsetSet('key', 'value');
     }
 
-    function it_will_throw_when_trying_to_unset_items()
+    function it_will_disallow_offset_unset()
     {
-        $this->shouldThrow(new ArrayIsImmutable)->duringOffsetUnset('key');
+        $this->shouldThrow(new CannotModifyImmutableArrayException())->duringOffsetUnset('key');
     }
 }

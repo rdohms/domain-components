@@ -5,19 +5,14 @@ use ArrayIterator;
 use Countable;
 use IteratorAggregate;
 
-abstract class ImmutableArray implements Countable, ArrayAccess, IteratorAggregate
+class ImmutableArray implements Countable, ArrayAccess, IteratorAggregate
 {
-    private $items = [];
+    protected $items = [];
 
     public function __construct(array $items)
     {
-        foreach ($items as $item) {
-            $this->isItemOfCorrectType($item);
-            $this->items[] = $item;
-        }
+        $this->items = $items;
     }
-
-    abstract protected function isItemOfCorrectType($item);
 
     final public function count()
     {
@@ -36,12 +31,12 @@ abstract class ImmutableArray implements Countable, ArrayAccess, IteratorAggrega
 
     final public function offsetSet($key, $value)
     {
-        throw new ArrayIsImmutable;
+        throw new CannotModifyImmutableArrayException;
     }
 
     final public function offsetUnset($key)
     {
-        throw new ArrayIsImmutable;
+        throw new CannotModifyImmutableArrayException;
     }
 
     final public function getIterator()
