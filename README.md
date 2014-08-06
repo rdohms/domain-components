@@ -1,6 +1,6 @@
 # Workflow
 
-This package provides several interfaces and tools for your project.
+This package provides several interfaces and tools for projects with domain modeling requirements.
 
 ## Included in this package
 
@@ -18,43 +18,41 @@ public function execute(Request $request);
 
 [**Request**](https://github.com/heybigname/workflow/blob/master/src/Request.php)
 
-No methods to implement.
+No methods to implement. Exists for type-safety.
 
 [**Response**](https://github.com/heybigname/workflow/blob/master/src/Response.php)
 
-No methods to implement.
+No methods to implement. Exists for type-safety.
 
 [**Handler**](https://github.com/heybigname/workflow/blob/master/src/Handler.php)
 ```php
 public function handle(Request $request);
 ```
 
-[**Identifier**](https://github.com/heybigname/workflow/blob/master/src/Identifier.php)
+[**AggregateIdentifier**](https://github.com/heybigname/workflow/blob/master/src/AggregateIdentifier.php)
 ```php
+public static function fromString($id);
 public function getId();
 public function equals(Identifier $other);
 ```
 
-### Traits
+### Concrete Classes
 
-[**EventRecorder**](https://github.com/heybigname/workflow/blob/master/src/EventRecorder.php)
-```php
-public function raise(DomainEvent $event);
-public function getRecordedEvents(): DomainEvents;
-public function clearRecordedEvents();
-```
+[**DomainEventArray**](https://github.com/heybigname/workflow/blob/master/src/DomainEventArray.php)
 
-### Classes
-
-[**DomainEvents**](https://github.com/heybigname/workflow/blob/master/src/DomainEvents.php)
-
-This class is an extension of ImmutableArray and only accepts instances of `BigName\Workflow\DomainEvent`.
+This class is an extension of ImmutableTypedArray and only accepts instances of `BigName\Workflow\DomainEvent`.
 
 ### Abstract Classes
 
-[**ImmutableArray**](https://github.com/heybigname/workflow/blob/master/src/ImmutableArray.php)
+[**ImmutableTypedArray**](https://github.com/heybigname/workflow/blob/master/src/ImmutableTypedArray.php)
 ```php
-protected function isItemOfCorrectType($item);
+protected function isCorrectType($item);
+```
+
+[**AggregateRoot**](https://github.com/heybigname/workflow/blob/master/src/AggregateRoot.php)
+```php
+public function raise(DomainEvent $event);
+public function releaseEvents(): DomainEventArray;
 ```
 
 ## License

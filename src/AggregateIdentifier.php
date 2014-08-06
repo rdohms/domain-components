@@ -2,7 +2,7 @@
 
 interface AggregateIdentifier
 {
-    public static function fromString();
+    public static function fromString($id);
     public function getId();
     public function equal(AggregateIdentifier $other);
 } 
