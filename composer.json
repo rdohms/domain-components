@@ -1,6 +1,6 @@
 {
     "name": "heybigname/workflow",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "tags": ["command bus", "domain events"],
     "description": "Our workflow based on using a Command Bus and Domain Events.",
     "authors": [
