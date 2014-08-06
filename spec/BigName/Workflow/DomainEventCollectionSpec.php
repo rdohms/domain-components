@@ -7,11 +7,11 @@ use BigName\Workflow\InvalidTypeException;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class DomainEventArraySpec extends ObjectBehavior
+class DomainEventCollectionSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->beAnInstanceOf('BigName\Workflow\DomainEventArray');
+        $this->beAnInstanceOf('BigName\Workflow\DomainEventCollection');
     }
 
     function it_stores_domain_events(DomainEvent $event)

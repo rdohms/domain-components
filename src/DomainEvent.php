@@ -2,6 +2,4 @@
 
 use BigName\EventDispatcher\Event;
 
-interface DomainEvent extends Event
-{
-} 
+interface DomainEvent extends Event {}

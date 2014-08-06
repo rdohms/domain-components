@@ -1,6 +1,6 @@
 <?php namespace BigName\Workflow;
 
-class DomainEventArray extends ImmutableTypedArray
+class DomainEventCollection extends TypedImmutableArray
 {
     protected function isCorrectType($item)
     {
