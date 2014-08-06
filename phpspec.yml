@@ -1,6 +1,6 @@
 ---
 suites:
-  event_dispatcher_suite:
+  workflow_suite:
     namespace: BigName\Workflow
     psr4_prefix: BigName\Workflow
 
