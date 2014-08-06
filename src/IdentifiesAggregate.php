@@ -1,8 +1,8 @@
 <?php namespace BigName\Workflow;
 
-interface AggregateIdentifier
+interface IdentifiesAggregate
 {
     public static function fromString($id);
     public function getId();
-    public function equal(AggregateIdentifier $other);
+    public function equal(IdentifiesAggregate $other);
 } 
