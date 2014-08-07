@@ -1,9 +1,10 @@
 <?php
 
-namespace spec\BigName\Workflow;
+namespace spec\BigName\DomainComponents;
 
-use BigName\Workflow\DomainEvent;
-use BigName\Workflow\InvalidTypeException;
+use BigName\DomainComponents\DomainEvent;
+use BigName\Immutables\InvalidType;
+
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -11,7 +12,7 @@ class DomainEventCollectionSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->beAnInstanceOf('BigName\Workflow\DomainEventCollection');
+        $this->beAnInstanceOf('BigName\DomainComponents\DomainEventCollection');
     }
 
     function it_stores_domain_events(DomainEvent $event)
@@ -22,6 +23,6 @@ class DomainEventCollectionSpec extends ObjectBehavior
 
     function it_throws_a_type_error_for_other_values()
     {
-        $this->shouldThrow(new InvalidTypeException())->during('__construct', [['cats', 'dogs']]);
+        $this->shouldThrow(new InvalidType)->during('__construct', [['cats', 'dogs']]);
     }
 }

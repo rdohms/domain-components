@@ -40,7 +40,7 @@ public function equals(Identifier $other);
 
 [**DomainEventArray**](https://github.com/heybigname/workflow/blob/master/src/DomainEventArray.php)
 
-This class is an extension of ImmutableTypedArray and only accepts instances of `BigName\Workflow\DomainEvent`.
+This class is an extension of ImmutableTypedArray and only accepts instances of `BigName\DomainComponents\DomainEvent`.
 
 ### Abstract Classes
 

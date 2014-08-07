@@ -1,7 +1,7 @@
 ---
 suites:
   workflow_suite:
-    namespace: BigName\Workflow
-    psr4_prefix: BigName\Workflow
+    namespace: BigName\DomainComponents
+    psr4_prefix: BigName\DomainComponents
 
 formatter.name: pretty

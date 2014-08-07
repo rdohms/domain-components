@@ -1,4 +1,4 @@
-<?php namespace BigName\Workflow;
+<?php namespace BigName\DomainComponents;
 
 use BigName\EventDispatcher\Event;
 

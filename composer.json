@@ -1,18 +1,22 @@
 {
-    "name": "heybigname/workflow",
-    "version": "0.2.0",
-    "tags": ["command bus", "domain events"],
-    "description": "Our workflow based on using a Command Bus and Domain Events.",
+    "name": "heybigname/domain-components",
+    "version": "0.3.0",
+    "tags": ["aggregate", "domain event", "command bus"],
+    "description": "Components for domain modeling.",
     "authors": [
         {
             "name": "Mitchell van Wijngaarden",
             "email": "mitchell@kooding.nl",
-            "homepage": "http://heybigname.com/"
+            "homepage": "http://heybigname.com"
+        }, {
+            "name": "Shawn McCool",
+            "email": "shawn@heybigname.com",
+            "homepage": "http://heybigname.com"
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/container": "~4.2",
+        "php": ">=5.5.0",
+        "heybigname/immutables": "dev-master",
         "heybigname/event-dispatcher": "1.1.*"
     },
     "require-dev": {
@@ -20,16 +24,21 @@
     },
     "autoload": {
         "psr-4": {
-            "BigName\\Workflow\\": "src/"
+            "BigName\\DomainComponents\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BigName\\Workflow\\Stubs\\": "spec/stubs/"
+            "BigName\\DomainComponents\\Stubs\\": "spec/stubs/"
         }
     },
     "config": {
         "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.3.0-dev"
+        }
     },
     "license": "MIT",
     "minimum-stability": "dev"

@@ -1,5 +1,3 @@
 <?php namespace BigName\DomainComponents;
 
-interface DomainComponentsException
-{
-} 
+interface CommandResponse {}

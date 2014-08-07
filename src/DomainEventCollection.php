@@ -1,9 +1,13 @@
-<?php namespace BigName\Workflow;
+<?php namespace BigName\DomainComponents;
+
+use BigName\Immutables\InvalidType;
+use BigName\Immutables\TypedImmutableArray;
 
 class DomainEventCollection extends TypedImmutableArray
 {
-    protected function isCorrectType($item)
+    protected function typeGuard($item)
     {
-        return $item instanceof DomainEvent;
+        if ( ! $item instanceof DomainEvent)
+            throw new InvalidType;
     }
 }

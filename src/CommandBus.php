@@ -1,6 +1,6 @@
-<?php namespace BigName\Workflow;
+<?php namespace BigName\DomainComponents;
 
 interface CommandBus
 {
-    public function execute(Request $request);
+    public function execute(CommandRequest $request);
 }

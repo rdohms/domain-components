@@ -1,5 +1,3 @@
-<?php namespace BigName\Workflow; 
+<?php namespace BigName\DomainComponents;
 
-interface AggregateRoot extends RecordsEvents
-{
-} 
+interface AggregateRoot extends RecordsEvents {}
