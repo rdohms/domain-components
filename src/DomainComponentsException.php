@@ -1,5 +1,7 @@
 <?php namespace BigName\DomainComponents;
 
-interface DomainComponentsException
-{
-} 
+/**
+ * Interface DomainComponentsException
+ * @package BigName\DomainComponents
+ */
+interface DomainComponentsException {}
