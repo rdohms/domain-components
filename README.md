@@ -2,13 +2,9 @@
 
 This package provides components for projects with domain-modeling requirements.
 
-## Included in this package
+This package requires the [Domain-Event Dispatcher](https://github.com/heybigname/domain-event-dispatcher) package.
 
-### Packages
-
-* [Domain-Event Dispatcher](https://github.com/heybigname/domain-event-dispatcher)
-
-### Interfaces
+## Interfaces
 
 [**AggregateRepository**](https://github.com/heybigname/domain-components/blob/master/src/AggregateRepository.php)
 ```php
@@ -41,6 +37,6 @@ public function raise(DomainEvent $event);
 public function releaseEvents();
 ```
 
-### Classes
+## Classes
 
 [**DomainEventCollection**](https://github.com/heybigname/domain-components/blob/master/src/DomainEventCollection.php)
