@@ -3,6 +3,6 @@
 interface IdentifiesAggregate
 {
     public static function fromString($id);
-    public function getId();
+    public function __toString();
     public function equal(IdentifiesAggregate $other);
 } 
