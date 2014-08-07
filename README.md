@@ -10,32 +10,32 @@ This package provides components for projects with domain-modeling requirements.
 
 ### Interfaces
 
-[**AggregateRepository**](https://github.com/heybigname/workflow/blob/master/src/AggregateRepository.php)
+[**AggregateRepository**](https://github.com/heybigname/domain-components/blob/master/src/AggregateRepository.php)
 ```php
 public function get(IdentifiesAggregate $id);
 public function add(AggregateRoot $aggregate);
 ```
 
-[**AggregateRoot**](https://github.com/heybigname/workflow/blob/master/src/AggregateRoot.php)
+[**AggregateRoot**](https://github.com/heybigname/domain-components/blob/master/src/AggregateRoot.php)
 
-Extends [RecordsEvents](https://github.com/heybigname/workflow/blob/master/src/RecordsEvents.php) interface.
+Extends [RecordsEvents](https://github.com/heybigname/domain-components/blob/master/src/RecordsEvents.php) interface.
 
-[**DomainComponentsException**](https://github.com/heybigname/workflow/blob/master/src/DomainComponentsException.php)
+[**DomainComponentsException**](https://github.com/heybigname/domain-components/blob/master/src/DomainComponentsException.php)
 
 Provides package-level exception catching.
 
-[**DomainEvent**](https://github.com/heybigname/workflow/blob/master/src/DomainEvent.php)
+[**DomainEvent**](https://github.com/heybigname/domain-components/blob/master/src/DomainEvent.php)
 
 Extends [heybigname/domain-event-dispatcher](https://github.com/heybigname/domain-event-dispatcher) package's [Event](https://github.com/heybigname/domain-event-dispatcher/blob/master/src/Event.php) interface.
 
-[**IdentifiesAggregate**](https://github.com/heybigname/workflow/blob/master/src/IdentifiesAggregate.php)
+[**IdentifiesAggregate**](https://github.com/heybigname/domain-components/blob/master/src/IdentifiesAggregate.php)
 ```php
 public static function fromString($id);
 public function getId();
 public function equal(IdentifiesAggregate $other);
 ```
 
-[**RecordsEvents**](https://github.com/heybigname/workflow/blob/master/src/RecordsEvents.php)
+[**RecordsEvents**](https://github.com/heybigname/domain-components/blob/master/src/RecordsEvents.php)
 ```php
 public function raise(DomainEvent $event);
 public function releaseEvents();
@@ -43,8 +43,4 @@ public function releaseEvents();
 
 ### Classes
 
-[**DomainEventCollection**](https://github.com/heybigname/workflow/blob/master/src/DomainEventCollection.php)
-
-## License
-
-This package is licensed under the [MIT license](https://github.com/heybigname/workflow/blob/master/LICENSE).
+[**DomainEventCollection**](https://github.com/heybigname/domain-components/blob/master/src/DomainEventCollection.php)
