@@ -18,13 +18,15 @@ public function add(AggregateRoot $aggregate);
 
 [**AggregateRoot**](https://github.com/heybigname/workflow/blob/master/src/AggregateRoot.php)
 
-No methods to implement. Extends `RecordsEvents` interface.
+Extends [RecordsEvents](https://github.com/heybigname/workflow/blob/master/src/RecordsEvents.php) interface.
 
 [**DomainComponentsException**](https://github.com/heybigname/workflow/blob/master/src/DomainComponentsException.php)
 
-No methods to implement. Provides package-level exception catching.
+Provides package-level exception catching.
 
 [**DomainEvent**](https://github.com/heybigname/workflow/blob/master/src/DomainEvent.php)
+
+Extends [heybigname/domain-event-dispatcher](https://github.com/heybigname/domain-event-dispatcher) package's [Event](https://github.com/heybigname/domain-event-dispatcher/blob/master/src/Event.php) interface.
 
 [**IdentifiesAggregate**](https://github.com/heybigname/workflow/blob/master/src/IdentifiesAggregate.php)
 ```php
