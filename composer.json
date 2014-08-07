@@ -1,8 +1,8 @@
 {
     "name": "heybigname/domain-components",
     "version": "0.3.0",
-    "tags": ["aggregate", "domain event", "command bus"],
-    "description": "Components for domain modeling.",
+    "tags": ["aggregate", "domain event"],
+    "description": "components for domain modeling",
     "authors": [
         {
             "name": "Mitchell van Wijngaarden",
@@ -34,11 +34,6 @@
     },
     "config": {
         "bin-dir": "bin"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.3.0-dev"
-        }
     },
     "license": "MIT",
     "minimum-stability": "dev"
