@@ -27,7 +27,7 @@ Extends [heybigname/domain-event-dispatcher](https://github.com/heybigname/domai
 [**IdentifiesAggregate**](https://github.com/heybigname/domain-components/blob/master/src/IdentifiesAggregate.php)
 ```php
 public static function fromString($id);
-public function getId();
+public function __toString();
 public function equal(IdentifiesAggregate $other);
 ```
 
