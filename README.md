@@ -40,3 +40,11 @@ public function releaseEvents();
 ## Classes
 
 [**DomainEventCollection**](https://github.com/heybigname/domain-components/blob/master/src/DomainEventCollection.php)
+
+## Installation
+
+Run the command below to install via Composer
+
+```shell
+composer require heybigname/domain-components
+```
